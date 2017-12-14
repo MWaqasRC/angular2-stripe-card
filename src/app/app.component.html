@@ -1,0 +1,10 @@
+<form #stripeForm="ngForm" class="stripe">
+  <app-stripe #stripeComponent [stripePublicKey]="'pk_test_PDrpvtLcRncXJ7pQtMoMsEnW'"
+              [stripeCardOptions]="{ hidePostalCode: true }"></app-stripe>
+  <button (click)="getStripeToken()">Pay $777</button>
+</form>
+
+
+
+
+
