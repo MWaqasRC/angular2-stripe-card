@@ -2,6 +2,7 @@
 
 import { Component, ViewChild } from '@angular/core';
 import { StripeComponent } from './stripe/stripe.component';
+import { CardConnectComponent } from "./card-connect/card-connect.component";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { StripeComponent } from './stripe/stripe.component';
 export class AppComponent {
 
   @ViewChild('stripeComponent') stripeComponent: StripeComponent;
+  @ViewChild('cardConnectComponent') cardConnectComponent: CardConnectComponent;
 
   constructor() {
   }
@@ -19,5 +21,10 @@ export class AppComponent {
     this.stripeComponent.getStripeToken().subscribe(token => {
       console.log(token);
     });
+  }
+
+  getCardConnectToken() {
+    const cardConnectData = this.cardConnectComponent.getCardConnectData();
+    console.log(cardConnectData);
   }
 }

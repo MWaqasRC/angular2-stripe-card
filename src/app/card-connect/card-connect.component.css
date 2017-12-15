@@ -1,0 +1,13 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.inputColumn {
+  padding-left: 9px;
+  height: 30px;
+}
+#expDateInput {
+  width: 25px;
+}
+#cvvInput {
+  width: 20px;
+}

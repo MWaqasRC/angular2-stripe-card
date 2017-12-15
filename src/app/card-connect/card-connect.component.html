@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="form-row clearfix">
+      <div class="form-col-40">
+        <iframe id="tokenframe" name="tokenframe" src="https://fts.cardconnect.com:6443/itoke/ajax-tokenizer.html?tokenizewheninactive=true&invalidinputevent=true&css=body{margin:0px;}%20input{width:100vw;height:36px;font-size:14px;padding-left:10px;padding-right:35px;border:1px%20solid%20%23d9d9d9;box-sizing:%20border-box;transition:all%20.3s;}%20.error{border:1px%20solid%20%23f44336;}}" frameborder="0" scrolling="no" width="170" height="35"></iframe>
+      </div>
+      <div class="form-col-40">
+        <div class="form-group">
+          <label for="cardExpireDate">Expiration Date</label>
+          <div class="validation-wrap custom-select-wrap material-dropdown">
+            <select name="cardExpireDate" id="cardExpireDate" required class="custom-select"
+                    [(ngModel)]="cardConnectData.cardExpMonth">
+              <option value = "Month" selected> Month </option>
+              <option *ngFor="let month of months;" [value]="month.id" [innerHTML]="month.month"></option>
+            </select>
+            <i class="material-icons arrow-drop-down">arrow_drop_down</i>
+          </div>
+        </div>
+      </div>
+      <div class="form-col-30">
+        <div class="form-group m-r-24 m-l-8">
+          <label for="cardExpireYear">&#160;</label>
+          <div class="validation-wrap custom-select-wrap material-dropdown">
+            <select name="cardExpireDate" id="cardExpireYear" required class="custom-select" [(ngModel)]="cardConnectData.cardExpYear"
+            >
+              <option value = "Year" selected> Year </option>
+              <option *ngFor="let year of years;" [value]="year.year" [innerHTML]="year.year"></option>
+            </select>
+            <i class="material-icons arrow-drop-down">arrow_drop_down</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-col-30">
+        <div class="form-group">
+          <label for="cvcNumber">CVC Code</label>
+          <input type="text" name="cvcNumber" id="cvcNumber" class="form-control-alt"  tabindex="1" [(ngModel)]="cardConnectData.cardCVV"  autocomplete="off" required #cvcNumber="ngModel">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
